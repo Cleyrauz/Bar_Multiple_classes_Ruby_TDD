@@ -22,13 +22,15 @@ class Pub
 
 
   def sell_a_drink(costumer, drink)
-    if costumer.wallet >= drink.price
+
+    if costumer.age >= 21
+     costumer.wallet >= drink.price
       costumer.wallet -= drink.price
       return drink.price
     else
-      "Please go home"
+      return "Please go home"
     end
-  end
+  end 
 
 
   end

@@ -27,9 +27,9 @@ class PubTest < MiniTest::Test
       assert_equal(5, @pub.sell_a_drink(@costumer, @drink1))
     end
 
-    def test_sell_a_drink__costumer_can_not_effort_drink
-      assert_equal("Please go home", @pub.sell_a_drink(@costumer2, @drink1))
-    end
+    # def test_sell_a_drink__costumer_can_not_effort_drink
+    #   assert_equal("Please go home", @pub.sell_a_drink(@costumer2, @drink1))
+    # end
 
     def test_costumer_buy_drink
       assert_equal(5, @costumer.buy_a_drink(@drink1))
