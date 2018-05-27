@@ -20,4 +20,12 @@ end
     return @wallet
   end
 
+  def get_drunkenness_level_up(drink)
+    if buy_a_drink(drink)
+      @drunkenness += drink.alcohol_level
+      return @drunkenness
+    end
+  end
+
+
 end
