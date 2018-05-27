@@ -20,6 +20,14 @@ class Pub
      return @till
   end
 
+  def costumer_can_effort_drink(costumer, drink)
+    if costumer.wallet >= drink.price
+      return "Welcome! What do you want to drink?"
+    else
+      return "Please go home"
+    end
+  end
+
 
   def sell_a_drink(costumer, drink)
 
@@ -30,7 +38,7 @@ class Pub
     else
       return "Please go home"
     end
-  end 
+  end
 
 
   end

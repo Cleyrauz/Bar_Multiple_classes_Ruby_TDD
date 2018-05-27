@@ -1,11 +1,12 @@
 class Costumer
 
-  attr_accessor :name, :wallet, :age
+  attr_accessor :name, :wallet, :age, :drunkenness
 
-  def initialize(name, wallet, age)
+  def initialize(name, wallet, age, drunkenness)
     @name = name
     @wallet = wallet
     @age = age
+    @drunkenness = drunkenness
   end
 
 
