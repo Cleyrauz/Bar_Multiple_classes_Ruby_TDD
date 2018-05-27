@@ -12,30 +12,40 @@ class PubTest < MiniTest::Test
       @costumer = Costumer.new("Raul", 20)
       @costumer2 = Costumer.new("Pedro", 2)
       @drink1 = Drink.new("Wine", 5)
+      @drink2 = Drink.new("Beer", 3)
     end
 
-  def test_pub_has_a_name
-    assert_equal("Counting House", @pub.name)
-  end
+    def test_pub_has_a_name
+      assert_equal("Counting House", @pub.name)
+    end
 
-  def test_pub_has_money
-    assert_equal(40, @pub.till)
-  end
+    def test_pub_has_money
+      assert_equal(40, @pub.till)
+    end
 
-  def test_costumer_effort_drink
-    assert_equal("What can of drink do you want?", @costumer.costumer_effort_drink(@drink1))
-  end
+    def test_costumer_effort_drink
+      assert_equal("What can of drink do you want?", @costumer.costumer_effort_drink(@drink1))
+    end
 
-  def test_costumer__can_not_effort_drink
-    assert_equal("Please, go home", @costumer2.costumer_effort_drink(@drink1))
-  end
+    def test_costumer__can_not_effort_drink
+      assert_equal("Please, go home", @costumer2.costumer_effort_drink(@drink1))
+    end
 
-  def test_costumer_buy_drink
-    assert_equal(5, @costumer.buy_a_drink(@drink1))
-  end
+    def test_costumer_buy_drink
+      assert_equal(5, @costumer.buy_a_drink(@drink1))
+    end
 
-  def test_remove_price_from_wallet
-    assert_equal(15, @costumer.remove_drink_price_from_wallet(@drink1))
-  end
+    def test_remove_price_from_wallet
+      assert_equal(15, @costumer.remove_drink_price_from_wallet(@drink1))
+    end
 
-end
+    def test_add_drinks_to_pub
+      assert_equal(1, @pub.add_drinks(@drink1))
+    end
+
+    def test_increase_till
+      money = @costumer.buy_a_drink(@drink1)
+      assert_equal(45, @pub.add_money_to_till(money))
+    end
+
+  end
