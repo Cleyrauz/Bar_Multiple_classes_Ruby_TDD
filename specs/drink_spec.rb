@@ -2,6 +2,7 @@ require("minitest/autorun")
 require("minitest/rg")
 
 require_relative("../drink")
+require_relative("../pub")
 
 class DrinkTest < MiniTest::Test
 

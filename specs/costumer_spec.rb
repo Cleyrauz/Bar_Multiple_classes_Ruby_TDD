@@ -2,6 +2,7 @@ require("minitest/autorun")
 require("minitest/rg")
 
 require_relative("../costumer")
+require_relative("../pub")
 
 class CostumerTest < MiniTest::Test
 
