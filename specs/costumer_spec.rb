@@ -7,7 +7,8 @@ require_relative("../pub")
 class CostumerTest < MiniTest::Test
 
     def setup
-      @costumer = Costumer.new("David", 60)
+      @costumer = Costumer.new("David", 60, 23)
+      @costumer2 = Costumer.new("Flor", 30, 15)
     end
 
     def test_costumer_has_name
@@ -15,6 +16,10 @@ class CostumerTest < MiniTest::Test
     end
     def test_costumer_has_money
       assert_equal(60, @costumer.wallet)
+    end
+
+    def test_costumer_has_an_age
+      assert_equal(23, @costumer.age)
     end
 
   end

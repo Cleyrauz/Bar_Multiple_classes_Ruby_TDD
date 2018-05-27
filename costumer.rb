@@ -1,20 +1,13 @@
 class Costumer
 
-  attr_accessor :name, :wallet
+  attr_accessor :name, :wallet, :age
 
-  def initialize(name, wallet)
+  def initialize(name, wallet, age)
     @name = name
     @wallet = wallet
+    @age = age
   end
 
-  def costumer_effort_drink(drink)
-    if @wallet >= drink.price
-      # @wallet -= drink.price
-      return "What can of drink do you want?"
-    else
-      return "Please, go home"
-  end
-end
 
 def buy_a_drink(drink)
   @wallet -= drink.price
@@ -25,6 +18,5 @@ end
     @wallet -= drink.price
     return @wallet
   end
-
 
 end

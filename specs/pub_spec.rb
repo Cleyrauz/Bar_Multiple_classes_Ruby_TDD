@@ -9,8 +9,8 @@ class PubTest < MiniTest::Test
 
     def setup
       @pub = Pub.new("Counting House", 40)
-      @costumer = Costumer.new("Raul", 20)
-      @costumer2 = Costumer.new("Pedro", 2)
+      @costumer = Costumer.new("Raul", 20, 25)
+      @costumer2 = Costumer.new("Pedro", 2, 54)
       @drink1 = Drink.new("Wine", 5)
       @drink2 = Drink.new("Beer", 3)
     end
@@ -23,12 +23,12 @@ class PubTest < MiniTest::Test
       assert_equal(40, @pub.till)
     end
 
-    def test_costumer_effort_drink
-      assert_equal("What can of drink do you want?", @costumer.costumer_effort_drink(@drink1))
+    def test_sell_a_drink
+      assert_equal(5, @pub.sell_a_drink(@costumer, @drink1))
     end
 
-    def test_costumer__can_not_effort_drink
-      assert_equal("Please, go home", @costumer2.costumer_effort_drink(@drink1))
+    def test_sell_a_drink__costumer_can_not_effort_drink
+      assert_equal("Please go home", @pub.sell_a_drink(@costumer2, @drink1))
     end
 
     def test_costumer_buy_drink
